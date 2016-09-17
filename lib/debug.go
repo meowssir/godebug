@@ -406,7 +406,8 @@ func printContext(lines []string, line, contextCount int) {
 var input = bufio.NewScanner(os.Stdin)
 
 func fallbackPrompt() (response string, ok bool) {
-	fmt.Print("(godebug) ")
+	// #NOTE: reformatted fallbackPrompt.
+	fmt.Print("(Godb) ")
 	if !input.Scan() {
 		return "", false
 	}
