@@ -65,7 +65,7 @@ func promptUserReadline() (response string, ok bool) {
 			checkReadlineErr(origMode.ApplyMode())
 		}()
 	}
-	s, err := line.Prompt("(godebug) ")
+	s, err := line.Prompt("(Godb) ")
 	if err != nil {
 		fmt.Println("readline error:", err)
 		return "", false
