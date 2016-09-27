@@ -674,9 +674,9 @@ func getStdLibPkgs() map[string]bool {
 	)
 	cmd.Stdout = stdout
 	cmd.Stderr = stderr
-	if err := cmd.Run(); err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to identify standard library packages. godebug should still work, but instrumentation might take longer.\nHere's the error from running 'go list std':\n%s\n", stderr.Bytes())
-	}
+	// if err := cmd.Run(); err != nil {
+	// 	fmt.Fprintf(os.Stderr, "Failed to identify standard library packages. godebug should still work, but instrumentation might take longer.\nHere's the error from running 'go list std':\n%s\n", stderr.Bytes())
+	// }
 	b := bytes.TrimSpace(stdout.Bytes())
 	for _, pkg := range bytes.Split(b, []byte{'\n'}) {
 		pkgs[string(pkg)] = true
